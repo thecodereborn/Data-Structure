@@ -1,6 +1,7 @@
 // Example program
 
-// 
+// naive approach to consider all pair in the array 
+// time complexity is O(n2) and auxiliary space is O(1)
 #include <iostream>
 #include <string>
 

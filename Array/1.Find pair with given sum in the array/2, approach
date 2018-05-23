@@ -1,4 +1,6 @@
 // Example program
+
+// time complexity is O( nlogn) and auxiliary space is O (1)
 #include <iostream>
 #include <string>
 #include <algorithm>        // contain sort algorithm

@@ -1,0 +1,36 @@
+// Example program
+#include <iostream>
+#include <string>
+#include <algorithm>        // contain sort algorithm
+
+using namespace std;
+
+void findPair(int arr[], int sz, int sum )
+{
+    sort(arr, arr+sz);
+    for(int i=0;i<sz;i++){  cout << arr[i] << " ";} cout << endl;
+    int high = sz-1; int low = 0;
+    while( low < high ){
+        if( arr[low] + arr[high] == sum){
+            cout << " pair found " << low << " : "<<arr[low] << "  " << high << " : "<<arr[high] << endl;
+            return;
+        }
+        else if( arr[low] + arr[high] < sum){
+            low++;
+        }
+        else
+            high--;
+    }
+}
+
+
+int main()
+{
+    int arr[] = { 8,7,2,5,3,1 };
+    int sum = 10;
+    
+    int n = sizeof(arr)/sizeof(arr[0]);
+    cout << " size of array is : " << n << endl;
+    findPair(arr, n , sum) ;
+    return 0 ; 
+}

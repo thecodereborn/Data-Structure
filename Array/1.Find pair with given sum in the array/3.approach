@@ -1,0 +1,37 @@
+// Example program
+/*  map to easily solve problem in linear time. insert each element in map and search for difference( arr[i],sum-arr[i]) 
+     already exist in the map or not 
+     
+     time complexity is O(n) and space is O(n)
+*/
+#include <iostream>
+#include <unordered_map>
+
+using namespace std;
+
+void findPair(int arr[], int n, int sum)
+{
+    unordered_map<int,int> map;
+    
+    for(int i=0;i<n;i++){
+        
+        if(map.find(sum-arr[i]) != map.end()){
+            cout << " pair found at index " << map[sum-arr[i]] << " and " << i;
+            return;
+        }
+        map[arr[i]]=i;
+    }
+    cout << " pair not found " ;
+}
+
+int main()
+{
+      int arr[] = { 8,7,2,5,3,1};
+      int sum = 10;
+      
+      int n = sizeof(arr)/sizeof(arr[0]);
+      
+      findPair(arr,n,sum);
+      
+      return 0;
+}
